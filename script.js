@@ -1,13 +1,13 @@
-var input = document.getElementById('board-size');
-var cor = '#'
-var valor = 0;
-var cores = [];
-var pixels = [];
-var pixelBoard = document.getElementById('pixel-board');
-var paleta = document.getElementById('color-palette');
-var capture = document.querySelector('.selected').style.backgroundColor;
-var paletaDeCores = JSON.parse(localStorage.getItem('colorPalette'));
-var draw = JSON.parse(localStorage.getItem('pixelBoard'));
+let input = document.getElementById('board-size');
+let cor = '#'
+let valor = 0;
+let cores = [];
+let pixels = [];
+let pixelBoard = document.getElementById('pixel-board');
+let paleta = document.getElementById('color-palette');
+let capture = document.querySelector('.selected').style.backgroundColor;
+let paletaDeCores = JSON.parse(localStorage.getItem('colorPalette'));
+let draw = JSON.parse(localStorage.getItem('pixelBoard'));
 
 
 window.onload = colorStorage(), boardStorage(), saveDraw();
@@ -104,13 +104,13 @@ function board () {
     }
 }
 function removeSelected () {
-    var pallete = document.querySelectorAll('.color')
+    let pallete = document.querySelectorAll('.color')
     for (let index = 0; index < pallete.length; index ++ ){
         pallete[index].classList.remove('selected');
     }
 }
 function reset () {
-    var pixel = document.querySelectorAll('.pixel')
+    let pixel = document.querySelectorAll('.pixel')
     for (let index = 0; index < pixel.length; index ++ ){
         pixel[index].style.backgroundColor = 'white';
     }pixels = [];
@@ -120,7 +120,7 @@ function reset () {
 
 
 paleta.addEventListener('click', function(event){
-    var target = event.target.className;
+    let target = event.target.className;
     if (target === 'color black' || target === 'color cor1' || target === 'color cor2' || target === 'color cor3'){
         removeSelected();
         event.target.classList.add('selected');
